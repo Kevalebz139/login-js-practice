@@ -563,7 +563,6 @@ button.addEventListener('click', () => {
     <!-- footer section ends -->
         `;
         output.innerHTML = buttonHTML;
-
     } 
     else {
         alert('enter a 10 digit number');

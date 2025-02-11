@@ -2,13 +2,16 @@ console.log('Updated userData:', JSON.parse(localStorage.getItem('userData')));
 let userData = JSON.parse(localStorage.getItem('userData'));
 const emailId = document.getElementById('email-id');
 const password = document.getElementById('password');
-const form = document.getElementById('form');
+const loginForm = document.getElementById('login-form');
 const submitButton = document.getElementById('submit-btn');
 console.log(emailId.value);
-userData.shift();
+// if(userData.length > 1){
+//     userData.shift();
+// }
+
 console.log(userData);
 
-form.addEventListener('reset', (e) => {
+loginForm.addEventListener('reset', (e) => {
     const emailLogin = emailId.value;
     const passwordLogin = password.value;
     let userFound = false;
