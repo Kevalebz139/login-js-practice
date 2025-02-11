@@ -5,13 +5,10 @@ const password = document.getElementById('password');
 const loginForm = document.getElementById('login-form');
 const submitButton = document.getElementById('submit-btn');
 console.log(emailId.value);
-// if(userData.length > 1){
-//     userData.shift();
-// }
-
 console.log(userData);
 
-loginForm.addEventListener('reset', (e) => {
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
     const emailLogin = emailId.value;
     const passwordLogin = password.value;
     let userFound = false;
@@ -24,7 +21,6 @@ loginForm.addEventListener('reset', (e) => {
                 window.location.href = "index.html";
                 return;
             } else {
-                e.preventDefault();
                 alert('Wrong password!');
                 return;
             }
@@ -32,8 +28,6 @@ loginForm.addEventListener('reset', (e) => {
     }
 
     if (!userFound) {
-        e.preventDefault();
         alert('Wrong email ID!');
     }
 });
-
